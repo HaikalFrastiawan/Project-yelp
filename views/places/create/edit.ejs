@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update place - Best Point</title>
-</head>
-<body>
+<% layout ('layouts/app') %>
     <h1>Update place</h1>
     
     <form action="/places/<%= place._id %>?_method=PUT" method="POST">
@@ -28,5 +21,3 @@
         <button type="submit" >Save</button>
         <a href="/places">Back</a>
     </form>
-</body>
-</html>

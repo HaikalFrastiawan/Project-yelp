@@ -1,3 +1,4 @@
+const ejsMate = require('ejs-mate')
 const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: true })) // supaya bisa baca req.body\
 app.use(methodOverride('_method')) // supaya bisa pakai method PUT dan DELETE
 
 
+app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
@@ -42,9 +44,10 @@ app.get('/places', async (req, res) => {
 })
 
 app.post('/places',  async (req, res)  => {
+    console.log("BODY:", req.body); // cek isi body
     const place = new Place(req.body.place)
     await place.save()
-    res.redirect('/places/create')  
+    res.redirect('/places')  
 })  
 
 

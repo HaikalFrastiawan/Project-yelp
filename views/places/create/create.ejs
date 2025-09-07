@@ -1,33 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add place - Best Point</title>
-</head>
-<body>
-    <h1>Add a new place</h1>
-   
-    <form action="/places" method="POST">
-        <div>
-            <label for="title">title:</label>
-            <input type="text" id="title" name="place[title]">
-        </div>
-        <div>
-            <label for="price">price:</label>
-            <input type="number" id="price" name="place[price]">
-        </div>
-        <div>
-            <label for="description">description:</label>
-            <textarea id="description" name="place[description]"></textarea>
-        <div>
-            <label for="location">location:</label>
-            <input type="text" id="location" name="place[location]">
-        </div>
+<% layout('layouts/app') %>
 
-        <button type="submit" >Save</button>
+<h1>Add a new place</h1>
 
-         <a href="/places">Back</a>
-    </form>
-</body>
-</html>
+<form action="/places" method="POST">
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="place[title]" required>
+  </div>
+
+  <div>
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="place[price]" required>
+  </div>
+
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" name="place[description]" required></textarea>
+  </div>
+
+  <div>
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="place[location]" required>
+  </div>
+
+  <div>
+    <label for="image">Image URL:</label>
+    <input type="text" id="image" name="place[image]" required>
+  </div>
+
+  <button type="submit">Save</button>
+  <a href="/places">Back</a>
+</form>
