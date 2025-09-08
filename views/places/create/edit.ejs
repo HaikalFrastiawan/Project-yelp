@@ -1,23 +1,37 @@
-<% layout ('layouts/app') %>
-    <h1>Update place</h1>
-    
-    <form action="/places/<%= place._id %>?_method=PUT" method="POST">
-        <div>
-            <label for="title">title:</label>
-            <input type="text" id="title" name="place[title]" value="<%= place.title %>">   
-        </div>
-        <div>
-            <label for="price">price:</label>
-            <input type="number" id="price" name="place[price]" value="<%= place.price %>">
-        </div>
-        <div>
-            <label for="description">description:</label>
-            <textarea id="description" name="place[description]" value="<%= place.description %>"></textarea>
-        <div>
-            <label for="location">location:</label>
-            <input type="text" id="location" name="place[location]" value="<%= place.location %>">
-        </div>
+<% layout('layouts/app') %>
 
-        <button type="submit" >Save</button>
-        <a href="/places">Back</a>
-    </form>
+<h1 class="text-center">Edit Place</h1>
+<div class="col-6 offset-3">
+  <form action="/places/<%= place._id %>?_method=PUT" method="POST">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title:</label>
+    <input type="text" id="title" name="place[title]" class="form-control"  value="<%= place.title %>" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="price" class="form-label">Price:</label>
+    <input type="number" id="price" name="place[price]"  class="form-control"   value="<%= place.price %>" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Description:</label>
+    <textarea id="description" name="place[description]"  class="form-control"  required>"<%= place.description %>"</textarea>
+  </div>
+
+  <div  class="mb-3">
+    <label for="location" class="form-label">Location:</label>
+    <input type="text" id="location" name="place[location]"  class="form-control" value="<%= place.location %>"  required>
+  </div>
+
+  <div class="mb-3">
+    <label for="image" class="form-label">Image URL:</label>
+    <input type="text" id="image" name="place[image]"  class="form-control"  value="<%= place.image %>"required>
+  </div>
+
+  <button type="submit" class="btn btn-success">Save</button>
+  <a href="/places">Back</a>
+</form>
+</div>
+
+
+

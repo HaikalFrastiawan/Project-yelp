@@ -1,5 +1,5 @@
 <% layout('layouts/app') %>
-<body>
+<!-- <body>
     <h1><%= place.title %></h1>
     <h2><%= place.location %></h2>
     <h3>$<%= place.price %> per night</h3>
@@ -13,4 +13,13 @@
     </form>
     <a href="/places/<%= place._id %>/edit">edit</a>
     <a href="/places">All places</a>
- 
+  -->
+
+
+<div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <img src="<%= place.image %>" alt="" class="img-card-top">
+            </div>
+        </div>
+</div>
